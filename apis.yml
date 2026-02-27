@@ -1,0 +1,235 @@
+specificationVersion: '0.19'
+
+aid: apache-flink-sandbox
+type: Sandbox
+visibility: Public
+
+name: Apache Flink JobManager REST API Sandbox
+description: >-
+  This is an Apache Flink sandbox that uses OpenAPI, Microcks, Bruno, and
+  Backstage to provide a 3rd-party REST API and MCP sandbox for Apache Flink.
+
+tags:
+  - Stream Processing
+  - Data Processing
+  - Jobs
+
+image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
+
+created: '2026-02-26'
+modified: '2026-02-26'
+
+url: https://github.com/naftiko/apache-flink-sandbox/blob/main/README.md
+
+apis:
+
+    - aid: apache-flink:jobmanager-rest-api
+      name: Flink JobManager REST API
+      description: >-
+        The Flink JobManager REST API provides programmatic access to manage and
+        monitor Apache Flink clusters, jobs, task managers, checkpoints,
+        savepoints, jars, metrics, and more.
+      humanURL: https://github.com/naftiko/apache-flink-sandbox
+      baseURL: http://localhost:8080/rest/apache-flink-sandbox/1.0.0
+      image: https://naftiko.github.io/docs/images/monogram/monogram_full_color_512.png
+      tags:
+        - Jobs
+        - Clusters
+        - Task Managers
+        - Checkpoints
+        - Savepoints
+        - Jars
+        - Metrics
+      properties:
+
+        - type: OpenAPI
+          url: openapi/apache-flink-openapi.yaml
+        - type: MockRestServer
+          url: http://localhost:8080/rest/apache-flink-api/1.0.0
+        - type: MockMCPServer
+          url: http://localhost:8080/rest/apache-flink-api/1.0.0/sse
+        - type: BackstageApi
+          url: backstage/apache-flink-api-sandbox-backstage.yml
+
+common:
+
+  - type: Summary
+    url: https://github.com/naftiko/apache-flink-sandbox/
+    data:
+      numberOfPaths: 66
+      numberOfOperations: 69
+      numberOfReadOperations: 55
+      numberOfWriteOperations: 14
+      numberOfSchemas: 138
+      numberOfResponses: 0
+      numberOfParameters: 126
+      numberOfExamples: 0
+      numberOfRequestBodies: 9
+      numberOfHeaders: 0
+      tags:
+        - BackPressure
+        - Checkpoints
+        - Cluster
+        - ClusterOverview
+        - Configuration
+        - Datasets
+        - FlameGraphs
+        - Jars
+        - JobAccumulators
+        - JobConfiguration
+        - JobExceptions
+        - JobExecutionResults
+        - JobLifecycle
+        - JobManager
+        - JobManagerEnvironment
+        - JobManagerLogs
+        - JobManagerOperatorMetrics
+        - JobMetrics
+        - JobPlans
+        - JobRescaling
+        - JobResourceRequirements
+        - JobStatus
+        - JobTaskManagers
+        - JobVertexAccumulators
+        - JobVertexMetrics
+        - JobVertexTaskManagers
+        - JobVertices
+        - Jobs
+        - SavepointDisposal
+        - Savepoints
+        - Subtasks
+        - TaskManagerLogs
+        - TaskManagerMetrics
+        - TaskManagerThreadDumps
+        - TaskManagers
+        - Watermarks
+      operations:
+        - Cancel Job
+        - Delete Cluster Data Set
+        - Delete Jar
+        - Generate Plan From Jar
+        - Get Aggregated Job Metrics
+        - Get Aggregated Subtask Metrics
+        - Get Aggregated Task Manager Metrics
+        - Get Checkpoint Config
+        - Get Checkpoint Static Details
+        - Get Checkpoint Status
+        - Get Checkpointing Statistics
+        - Get Cluster Configuration Info
+        - Get Cluster Data Set Delete Status
+        - Get Cluster Data Set List
+        - Get Cluster Overview
+        - Get Dashboard Configuration
+        - Get Jar List
+        - Get Job Accumulators
+        - Get Job Config
+        - Get Job Details
+        - Get Job Exceptions
+        - Get Job Execution Result
+        - Get Job Ids With Statuses Overview
+        - Get Job Manager Environment
+        - Get Job Manager Job Configuration
+        - Get Job Manager Job Environment
+        - Get Job Manager Log List
+        - Get Job Manager Log Url
+        - Get Job Manager Metrics
+        - Get Job Manager Operator Metrics
+        - Get Job Manager Thread Dump
+        - Get Job Metrics
+        - Get Job Plan
+        - Get Job Resource Requirements
+        - Get Job Status Info
+        - Get Job Vertex Accumulators
+        - Get Job Vertex Back Pressure
+        - Get Job Vertex Details
+        - Get Job Vertex Flame Graph
+        - Get Job Vertex Metrics
+        - Get Job Vertex Task Managers
+        - Get Job Vertex Watermarks
+        - Get Jobs Overview
+        - Get Rescaling Status
+        - Get Savepoint Disposal Status
+        - Get Savepoint Status
+        - Get Subtask Current Attempt Details
+        - Get Subtask Execution Attempt Accumulators
+        - Get Subtask Execution Attempt Details
+        - Get Subtask Metrics
+        - Get Subtasks All Accumulators
+        - Get Subtasks Times
+        - Get Task Checkpoint Statistics
+        - Get Task Manager Details
+        - Get Task Manager Log Url
+        - Get Task Manager Logs
+        - Get Task Manager Metrics
+        - Get Task Manager Thread Dump
+        - Get Task Managers
+        - Rescale Job
+        - Shutdown Cluster
+        - Submit Job From Jar
+        - Trigger Checkpoint
+        - Trigger Heartbeat
+        - Trigger Savepoint
+        - Trigger Savepoint Disposal
+        - Trigger Stop With Savepoint
+        - Update Job Resource Requirements
+        - Upload Jar
+
+  - type: GitHubHttpUrl
+    url: https://github.com/naftiko/apache-flink-sandbox
+
+  - type: GitHubSshUrl
+    url: git@github.com:naftiko/apache-flink-sandbox.git
+
+  - type: GitHubIssues
+    url: https://github.com/naftiko/apache-flink-sandbox/issues
+
+  - type: GitHubDiscussions
+    url: https://github.com/orgs/naftiko/discussions
+
+  - type: Standards
+    url: https://github.com/naftiko/apache-flink-sandbox/
+    data:
+
+      - name: APIs.json
+        description: This uses the APIs.json
+        docUrl: http://apisjson.org/
+
+      - name: OpenAPI
+        description: This uses OpenAPI to define access to all HTTP APIs.
+        docUrl: https://spec.openapis.org/oas/latest.html
+
+      - name: JSON Schema
+        description: This uses JSON Schema to define and validate all entities used.
+        docUrl: https://json-schema.org/specification
+
+      - name: Model Context Protocol
+        description: This uses MCP expressed as JSON schema to define each MCP server.
+        docUrl: https://modelcontextprotocol.io/
+
+      - name: Bruno Collections
+        description: This uses Bruno Collections to define each executable HTTP API integration.
+        docUrl: https://docs.usebruno.com/
+
+      - name: Bruno Environments
+        description: This uses Bruno Environments to store keys for each API to use in automation.
+        docUrl: https://docs.usebruno.com/secrets-management/overview
+
+      - name: API Commons
+        description: This uses an API Commons schema to define the plans and rate limits.
+        docUrl: https://apicommons.org/
+
+  - type: Services
+    url: https://github.com/naftiko/apache-flink-sandbox/
+    data:
+
+    - aid: apache-flink
+      name: Apache Flink
+      description: >-
+        Apache Flink is an open-source unified stream and batch data processing framework designed for stateful computations over unbounded and bounded data streams, with high throughput and low latency.
+      docUrl: https://flink.apache.org/docs/
+      loginUrl: https://flink.apache.org/
+
+maintainers:
+
+  - FN: Kin Lane
+    email: kinlane@naftiko.io
